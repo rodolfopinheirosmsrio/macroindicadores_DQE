@@ -1,0 +1,6 @@
+node_modules/
+segredos/
+perfil-navegador/
+logs/
+*.log
+

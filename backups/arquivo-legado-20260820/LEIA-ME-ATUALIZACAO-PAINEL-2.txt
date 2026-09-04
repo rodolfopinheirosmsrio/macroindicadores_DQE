@@ -1,0 +1,22 @@
+ATUALIZAÇÃO COMPLEMENTAR DO PAINEL — 07/08/2026
+
+Esta atualização corrige a organização e os filtros do painel.
+
+Como instalar
+1. Feche a aba do painel no navegador.
+2. Extraia este arquivo ZIP.
+3. Copie as pastas src e painel extraídas para dentro da pasta do robô:
+   C:\Users\15407850761\Documents\Codex\smsrio-macro-robo-primeira-instalacao\smsrio-macro-robo
+4. Quando o Windows perguntar, escolha substituir os arquivos existentes.
+5. Abra novamente painel\painel-dashboard.html.
+
+Melhorias desta atualização
+- O filtro Competência foi ocultado: use Ano e Mês, que são mais claros e não entram em conflito.
+- O filtro Unidade mostra agora: SIGLA — nome completo da unidade.
+- O filtro de indicador saiu da barra superior e foi colocado somente no menu Comparativo por indicador.
+- O Consolidado mensal por unidade mantém visíveis mês/ano e os subcabeçalhos durante a rolagem.
+- Unidades e pendências ficam agrupadas por categoria (Geral, Maternidade e Pediatria).
+- As telas de 2025 e 2024 passam a respeitar corretamente o filtro de ano.
+
+Sobre 2024
+Com a coleta atual, o painel possui somente dezembro/2024. Isso é esperado: a execução da competência julho/2026, com 19 meses históricos, alcança dezembro/2024. Para obter janeiro a novembro/2024, seria necessária uma coleta anterior, por exemplo executando uma competência de 2025.

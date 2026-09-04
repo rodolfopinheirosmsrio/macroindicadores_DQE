@@ -1,0 +1,27 @@
+ATUALIZAÇÃO DO PAINEL — GRÁFICOS, FORMATOS E HISTÓRICO 2024
+
+Como instalar
+1. Feche a aba do painel no navegador.
+2. Extraia este ZIP.
+3. Copie as pastas src, painel e config para:
+   C:\Users\15407850761\Documents\Codex\smsrio-macro-robo-primeira-instalacao\smsrio-macro-robo
+4. Confirme a substituição dos arquivos existentes.
+5. Abra novamente painel\painel-dashboard.html.
+
+O que mudou
+- O Comparativo por unidade passa a usar somente a Unidade selecionada no filtro superior.
+- Duração de utilização do centro cirúrgico é exibida em horas e minutos.
+- Indicadores percentuais são exibidos em percentual.
+- Linhas separam visualmente cada mês nas matrizes.
+- Menu Dados SMS Rio: escolha o indicador e veja gráfico mensal da plataforma.
+- Menu Dados Google Sheets: escolha o indicador e veja gráfico mensal da planilha.
+- O menu Divergências Sheets x SMS Rio exibe todas as divergências e esconde a barra de filtros enquanto está aberto.
+- O histórico foi ampliado de 19 para 31 meses.
+
+IMPORTANTE — completar 2024
+Depois de instalar, execute uma vez:
+- Competência: 2026-07
+- Modo: conferir
+- Categorias e siglas: deixe em branco (todas)
+
+Essa conferência não altera as planilhas. Ela apenas coleta os meses históricos e, com 31 meses, alcança janeiro/2024.

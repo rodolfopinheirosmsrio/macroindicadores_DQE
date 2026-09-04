@@ -1,0 +1,22 @@
+ATUALIZAÇÃO DO ROBÔ E DO PAINEL — 07/08/2026
+
+1. Feche o robô, se ele estiver aberto.
+2. Faça uma cópia de segurança da pasta atual do robô.
+3. Copie o conteúdo desta atualização sobre a pasta do robô e confirme a substituição dos arquivos.
+4. Execute normalmente o arquivo INICIAR-ROBO.bat.
+
+O que mudou
+- O robô aguarda a janela de carregamento do SMS Rio desaparecer antes de clicar em Relatórios.
+- A janela histórica foi ampliada para 19 meses. Ao executar julho/2026, o robô consulta todo o ano de 2025, além de 2026.
+- Meses anteriores continuam somente para conferência: não são alterados.
+- O painel mantém as 36 combinações de unidade/categoria em cada competência e distingue:
+  dados lançados, competência ausente, unidade não localizada, erro técnico e competência ainda não consultada no histórico.
+- O resumo é separado em Geral, Maternidade e Pediatria.
+- O consolidado mensal mostra meses em colunas, com Google Sheets, SMS Rio e divergência Sheets x SMS.
+- O comparativo por indicador possui filtro de indicador e compara todas as unidades mês a mês.
+- Cabeçalhos e filtros permanecem visíveis durante a rolagem.
+- O histórico de execuções foi reorganizado em cartões.
+- O relatório HTML passou a identificar explicitamente divergências Google Sheets x SMS Rio.
+
+Observação sobre 2025
+O painel somente exibe valores que já foram coletados pelo robô. Depois de instalar esta versão, execute uma competência de 2026 (por exemplo, 2026-07) em modo CONFERIR. A primeira coleta de 19 meses será mais demorada. Os meses históricos serão lidos, mas não alterados.

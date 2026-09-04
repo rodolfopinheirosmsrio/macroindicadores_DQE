@@ -1,0 +1,20 @@
+ATUALIZAÇÃO DO PAINEL — ANÁLISE POR UNIDADE E FILTROS INTELIGENTES
+
+Como instalar
+1. Feche a aba do painel no navegador.
+2. Extraia este ZIP.
+3. Copie as pastas src e painel para:
+   C:\Users\15407850761\Documents\Codex\smsrio-macro-robo-primeira-instalacao\smsrio-macro-robo
+4. Confirme a substituição dos arquivos.
+5. Abra novamente painel\painel-dashboard.html.
+
+O que mudou
+- Corrige a grafia de Março.
+- Cria linhas verticais para separar cada competência mensal nas tabelas comparativas.
+- Adiciona o menu Comparativo por unidade.
+  Selecione uma unidade e veja todos os indicadores nas linhas, com Google Sheets, SMS Rio e situação por mês.
+- Ao escolher o ano, o filtro de mês passa a mostrar somente os meses disponíveis nesse ano.
+- Ao escolher uma categoria, o filtro de unidade mostra somente as unidades daquela categoria.
+- A lista do novo Comparativo por unidade segue as mesmas opções disponíveis no filtro superior.
+
+Não é necessário executar o robô novamente: esta atualização usa o histórico já coletado.

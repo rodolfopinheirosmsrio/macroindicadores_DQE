@@ -1,0 +1,24 @@
+ATUALIZACAO DO PAINEL — 10/08/2026
+
+Esta atualizacao corrige o Comparativo por unidade e altera os dois novos menus:
+
+- Dados SMS Rio: mostra TODOS os indicadores da unidade escolhida no filtro superior,
+  em colunas por mes, como no relatorio mensal da plataforma.
+- Dados Google Sheets: mostra TODOS os indicadores da mesma unidade e periodo,
+  conforme registrados na planilha.
+
+Nao existe mais um seletor de indicador nesses dois menus.
+
+COMO INSTALAR
+
+1. Feche o painel no navegador.
+2. Na pasta do robo, substitua as pastas "src", "painel" e "config" pelas
+   pastas de mesmo nome deste pacote.
+3. Abra novamente painel\painel-dashboard.html.
+
+IMPORTANTE SOBRE 2024
+
+A configuracao agora permite guardar 31 meses de historico. Para que janeiro a
+dezembro de 2024 aparecam no painel, rode uma vez o robo em modo "conferir"
+para a competencia 2026-07. Essa consulta apenas confere: ela nao altera a
+planilha. Depois disso, atualize/reabra o painel.

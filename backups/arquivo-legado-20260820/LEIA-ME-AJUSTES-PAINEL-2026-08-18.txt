@@ -1,0 +1,47 @@
+AJUSTES DO PAINEL MACROINDICADORES - 18/08/2026
+
+Arquivo principal alterado:
+- src/dashboard-ui.mjs
+
+Painel regenerado:
+- painel/painel-dashboard.html
+
+ALTERACOES
+1. Unidades de taxa do SMS Rio
+- PAV (Pneumonia associada a Ventilacao Mecanica): exibida em por mil (‰).
+- ICS (infeccao na corrente sanguinea): exibida em por mil (‰).
+- ITU (infeccao no trato urinario): exibida em por mil (‰).
+- A regra vale para UTI Adulto e UTI Pediatrica.
+- Taxa de infeccao em sitio cirurgico de cirurgias limpas permanece em percentual (%).
+- Exemplo validado no HFA/Andarai em 2026:
+  Janeiro PAV: 11,06‰; Fevereiro PAV: 19,46‰.
+
+2. Tema claro / escuro
+- Botao no cabecalho para alternar o tema.
+- O tema escolhido fica salvo no navegador (localStorage).
+
+3. Filtros pesquisaveis
+- Os campos de selecao agora permitem digitar parte do texto e filtrar as opcoes.
+- Exemplo: digitar "Alb" no filtro Unidade lista as unidades Albert Schweitzer.
+- Continua possivel abrir a lista completa pelo botao de seta.
+- A melhoria tambem foi aplicada aos filtros locais de indicador e serie historica.
+
+4. Unidades e preenchimento
+- Incluida a coluna "Competencia", mostrando mes/ano e a chave YYYY-MM de cada linha.
+
+5. Serie historica
+- Novo item de menu "Serie historica".
+- Permite escolher unidade, indicador, competencia inicial e competencia final.
+- Exibe dois graficos separados: SMS Rio e Google Sheets.
+- Os dois graficos usam a mesma escala vertical para facilitar a comparacao.
+- Valores de PAV/ICS/ITU aparecem em ‰ tambem nos graficos.
+
+VALIDACOES REALIZADAS
+- node --check em src/dashboard-ui.mjs e src/dashboard.mjs.
+- Suite npm test: 5 testes aprovados.
+- Smoke test em Chromium: 11 visoes do menu abertas sem erro JavaScript.
+- Busca parcial "Alb" validada.
+- Tema escuro validado.
+- HFA validado: PAV 11,06‰ / 19,46‰, ICS e ITU em ‰, sitio cirurgico em %.
+- Nova coluna Competencia validada.
+- Serie historica validada com 2 graficos SVG separados.

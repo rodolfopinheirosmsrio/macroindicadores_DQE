@@ -1,0 +1,110 @@
+{
+  "criadoEm": "2026-09-03T18:01:22.543Z",
+  "unidade": {
+    "categoria": "Geral",
+    "aba": "HMMC",
+    "nome": "Hospital Municipal Miguel Couto"
+  },
+  "competencia": "2026-08",
+  "duracaoFluxoVisualMs": 8626,
+  "download": {
+    "bytes": 19231,
+    "hashSha256": "0df8965797b2d5ae30f0b2971ed229a28588b1bf3a371a706d513ebbde60e29e"
+  },
+  "resultadoDireto": {
+    "viavel": false,
+    "motivo": "Nenhuma resposta de exportação foi identificada automaticamente."
+  },
+  "respostasObservadas": [
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/publico/session/getSession.php",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 2
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/usuario/perfil_unidade",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/publico/session/getSession.php",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 2
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/usuario/perfil_unidade",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/publico/session/getSession.php",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 2
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/usuario/perfil_unidade",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/relatorio/get_unidades_grupo?parametros=tabela",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/publico/session/getSession.php",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 2
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/usuario/perfil_unidade",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/relatorio/get_dados_por_vigencia?parametros=tabela,cnes,vigencia",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    }
+  ]
+}

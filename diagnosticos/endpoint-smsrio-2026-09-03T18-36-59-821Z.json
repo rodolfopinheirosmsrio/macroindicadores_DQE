@@ -1,0 +1,611 @@
+{
+  "criadoEm": "2026-09-03T18:36:59.828Z",
+  "unidade": {
+    "categoria": "Geral",
+    "aba": "HMMC",
+    "nome": "Hospital Municipal Miguel Couto"
+  },
+  "competencia": "2026-08",
+  "duracaoFluxoVisualMs": 9515,
+  "download": {
+    "bytes": 19231,
+    "hashSha256": "0df8965797b2d5ae30f0b2971ed229a28588b1bf3a371a706d513ebbde60e29e"
+  },
+  "resultadoDireto": {
+    "viavel": true,
+    "status": 200,
+    "url": "https://smsrio.org/subhue/macroindicadores/server/relatorio/get_dados_por_vigencia?tabela=1&cnes=2270269&vigencia=2026",
+    "metodo": "GET",
+    "tipoConteudo": "text/html; charset=UTF-8",
+    "duracaoMs": 730,
+    "bytes": 14857,
+    "mesmaRespostaDaTela": true,
+    "indicadoresNoExcel": 78,
+    "estruturaJson": {
+      "tipo": "objeto",
+      "chaves": [
+        "id_indicador",
+        "ch_tt_funcionarios",
+        "ch_tt_horas_medicas",
+        "ch_tt_dias_afastamento_por_licenca",
+        "caphosp_tt_leitos",
+        "caphosp_leitos_emergencia",
+        "caphosp_leitos_ui",
+        "caphosp_leitos_unid_fechadas",
+        "caphosp_tt_cons_ambulatorio",
+        "caphosp_tt_leitos_instalados",
+        "unipacext_tt_consultas_externos",
+        "unipacext_consultas_emergencia_spa",
+        "unipacext_tt_consultas_ambulatorio",
+        "unipacext_consultas_primeira_vez",
+        "unipacext_consultas_subsequentes",
+        "uniinternacao_tt_internacoes",
+        "uniinternacao_intern_idoso",
+        "uniinternacao_tt_saidas",
+        "uniinternacao_indice_giro",
+        "uniinternacao_tx_ocup_hosp",
+        "uniinternacao_tx_ocup_clinica_medica",
+        "uniinternacao_tx_ocup_ortopedia",
+        "uniinternacao_tx_ocup_clinica_cirurgica",
+        "uniinternacao_tx_ocup_cir_vascular",
+        "uniinternacao_tx_ocup_neuro",
+        "uniinternacao_tx_ocup_uro",
+        "uniinternacao_tx_ocup_saude_mental",
+        "uniinternacao_tx_ocup_pediatria",
+        "uniinternacao_tx_morta_geral",
+        "uniinternacao_tmp_hosp",
+        "uniinternacao_tmp_clinica_medica",
+        "uniinternacao_tmp_ped",
+        "uniinternacao_tmp_cirurgia_geral",
+        "uniinternacao_tmp_cirurgia_vascular",
+        "uniinternacao_tmp_orto",
+        "uniinternacao_tmp_neuro",
+        "uniinternacao_tmp_uro",
+        "uniinternacao_tmp_leitos_saude_mental",
+        "uniinternacao_tmp_cm_sem_casos_sociais",
+        "uniinternacao_tmp_casos_sociais",
+        "uniinternacao_tm_perma_cli_med_sem_casos_sociais",
+        "uniinternacao_tm_perma_casos_sociais",
+        "uniinternacao_ind_queda",
+        "uniinternacao_ind_lesao_pressao",
+        "unicirurgica_tt_sala_cirurgica",
+        "unicirurgica_total_salas",
+        "unicirurgica_cirurgia_ortopedica",
+        "unicirurgica_neurocirurgia",
+        "unicirurgica_cirurgia_geral",
+        "unicirurgica_cirurgia_vascular",
+        "unicirurgica_hora_utilizacao",
+        "unicirurgica_cirurgia_marcada",
+        "unicirurgica_percente_suspensao",
+        "unicirurgica_tx_infec_cirurgia_limpa",
+        "uti_qtd_uti_adulto",
+        "uti_tt_intern",
+        "uti_qtd_intern_cirurgico",
+        "uti_qtd_intern_clinicos",
+        "uti_tmp_uti",
+        "uti_qtd_obitos_infeccao",
+        "uti_taxa_infeccao",
+        "uti_taxa_mortalidade",
+        "uti_taxa_infeccao_trato_urinario_adulto",
+        "uti_tx_ocupacao",
+        "uti_tx_mortalidade_padronizada",
+        "uti_tx_peneumonia_associada_vent_mecanica",
+        "uti_tx_infeccao_corrente_sanguinea",
+        "uad_patologia_clinica",
+        "uad_rx",
+        "uad_tomografia",
+        "uad_ultrassonografia",
+        "uad_anatomia_patologica",
+        "uad_ecocardiograma",
+        "uad_mamografia",
+        "uad_endoscopia",
+        "fatura_sia_aih_apresentado",
+        "fatura_sia_aih_aprovado",
+        "fatura_ambula_apresentado",
+        "fatura_ambula_aprovado",
+        "fatura_aih_apresentado",
+        "fatura_aih_aprovado",
+        "fatura_total_aih_apresentado",
+        "fatura_total_aih_aprovado",
+        "fatura_indicd_aprovacao_aih_apresentada",
+        "fatura_valor_medio_aih",
+        "po_tt_obitos_sem_cadaver",
+        "po_menos_dia",
+        "po_mais_dia",
+        "po_chegou_cadaver",
+        "rr_tt_remocoes",
+        "rr_gse",
+        "rr_samurj",
+        "rr_samu",
+        "rr_todas_ambulancias",
+        "cnes",
+        "enviado",
+        "cpf_enviado",
+        "datahora_enviado",
+        "uti_tx_pneumo_assoc_vent_mecanica_pav",
+        "uti_tx_mort_padronizada"
+      ],
+      "colecoes": {}
+    }
+  },
+  "respostasSeguras": [
+    {
+      "url": "https://smsrio.org/subhue/macroindicadores/server/relatorio/get_unidades_grupo?tabela=1",
+      "resumo": {
+        "tipo": "array",
+        "conteudo": [
+          {
+            "cnes": "2270609",
+            "unidade": "SMS HOSPITAL MUNICIPAL LOURENCO JORGE AP 40"
+          },
+          {
+            "cnes": "6995462",
+            "unidade": "SMS HOSPITAL MUNICIPAL PEDRO II - AP 53"
+          },
+          {
+            "cnes": "2296306",
+            "unidade": "SMS HOSPITAL MUNICIPAL SALGADO FILHO - AP 32"
+          },
+          {
+            "cnes": "2280183",
+            "unidade": "SMS HOSPITAL MUNICIPAL SOUZA AGUIAR AP 10"
+          },
+          {
+            "cnes": "2298120",
+            "unidade": "SMS HOSPITAL MUNICIPAL ALBERT SCHWEITZER - AP 51"
+          },
+          {
+            "cnes": "2295407",
+            "unidade": "SMS HOSPITAL MUNICIPAL ROCHA FARIA - AP 52"
+          },
+          {
+            "cnes": "7166494",
+            "unidade": "SMS HOSPITAL MUNICIPAL EVANDRO FREIRE - AP 31"
+          },
+          {
+            "cnes": "2273187",
+            "unidade": "SMS HOSPITAL MUNICIPAL ALVARO RAMOS - AP 40"
+          },
+          {
+            "cnes": "2270242",
+            "unidade": "SMS HOSPITAL MUNICIPAL BARATA RIBEIRO AP 10"
+          },
+          {
+            "cnes": "2269481",
+            "unidade": "SMS HOSPITAL MUNICIPAL DA PIEDADE - AP 32"
+          },
+          {
+            "cnes": "2269813",
+            "unidade": "SMS HOSPITAL DE GERIAT. E GERONT. - AP 22"
+          },
+          {
+            "cnes": "2270056",
+            "unidade": "SMS HOSPITAL MATERNIDADE PAULINO WERNECK - AP 31"
+          },
+          {
+            "cnes": "2273349",
+            "unidade": "SMS HOSPITAL MUNICIPAL RAPHAEL DE PAULA SOUZA AP 40"
+          },
+          {
+            "cnes": "2273489",
+            "unidade": "SMS HOSPITAL MUNICIPAL ROCHA MAIA AP 21"
+          },
+          {
+            "cnes": "5717256",
+            "unidade": "SMS HOSPITAL MUNICIPAL RONALDO GAZOLLA - AP 33"
+          },
+          {
+            "cnes": "2291266",
+            "unidade": "SMS HOSPITAL MUNICIPAL FRANCISCO DA SILVA TELLES AP33"
+          },
+          {
+            "cnes": "2270269",
+            "unidade": "SMS HOSPITAL MUNICIPAL MIGUEL COUTO AP 21"
+          },
+          {
+            "cnes": "2270609",
+            "unidade": "SMS HOSPITAL MUNICIPAL LOURENCO JORGE AP 40"
+          },
+          {
+            "cnes": "2295423",
+            "unidade": "HOSPITAL FEDERAL CARDOSO FONTES"
+          },
+          {
+            "cnes": "2295423",
+            "unidade": "HOSPITAL FEDERAL CARDOSO FONTES"
+          },
+          {
+            "cnes": "2269384",
+            "unidade": "HOSPITAL FEDERAL DO ANDARAI"
+          },
+          {
+            "cnes": "2269384",
+            "unidade": "HOSPITAL FEDERAL DO ANDARAI"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://smsrio.org/subhue/macroindicadores/server/relatorio/get_dados_por_vigencia?tabela=1&cnes=2270269&vigencia=2026",
+      "resumo": {
+        "tipo": "object",
+        "amostra": {
+          "id_indicador": {
+            "202601": "4953",
+            "202602": "5022",
+            "202603": "5106",
+            "202604": "5196",
+            "202605": "5276",
+            "202606": "5367",
+            "202607": "5427",
+            "202608": "5514"
+          },
+          "ch_tt_funcionarios": {
+            "202601": "1640",
+            "202602": "1614",
+            "202603": "1743",
+            "202604": "1714",
+            "202605": "1691",
+            "202606": "1695",
+            "202607": "1692",
+            "202608": "0"
+          },
+          "ch_tt_horas_medicas": {
+            "202601": "0",
+            "202602": "0",
+            "202603": "0",
+            "202604": "0",
+            "202605": "0",
+            "202606": "0",
+            "202607": "0",
+            "202608": "0"
+          },
+          "ch_tt_dias_afastamento_por_licenca": {
+            "202601": "0",
+            "202602": "0",
+            "202603": "0",
+            "202604": "0",
+            "202605": "0",
+            "202606": "0",
+            "202607": "0",
+            "202608": "0"
+          },
+          "caphosp_tt_leitos": {
+            "202601": "360",
+            "202602": "360",
+            "202603": "360",
+            "202604": "360",
+            "202605": "360",
+            "202606": "360",
+            "202607": "360",
+            "202608": "0"
+          },
+          "caphosp_leitos_emergencia": {
+            "202601": "41",
+            "202602": "41",
+            "202603": "41",
+            "202604": "41",
+            "202605": "41",
+            "202606": "41",
+            "202607": "41",
+            "202608": "0"
+          },
+          "caphosp_leitos_ui": {
+            "202601": "272",
+            "202602": "272",
+            "202603": "272",
+            "202604": "272",
+            "202605": "272",
+            "202606": "272",
+            "202607": "272",
+            "202608": "0"
+          },
+          "caphosp_leitos_unid_fechadas": {
+            "202601": "47",
+            "202602": "47",
+            "202603": "47",
+            "202604": "47",
+            "202605": "47",
+            "202606": "47",
+            "202607": "47",
+            "202608": "0"
+          },
+          "caphosp_tt_cons_ambulatorio": {
+            "202601": "20",
+            "202602": "20",
+            "202603": "20",
+            "202604": "20",
+            "202605": "20",
+            "202606": "20",
+            "202607": "20",
+            "202608": "0"
+          },
+          "caphosp_tt_leitos_instalados": {
+            "202601": "0",
+            "202602": "0",
+            "202603": "0",
+            "202604": "0",
+            "202605": "0",
+            "202606": "0",
+            "202607": "0",
+            "202608": "0"
+          },
+          "unipacext_tt_consultas_externos": {
+            "202601": "8077",
+            "202602": "7291",
+            "202603": "7475",
+            "202604": "6966",
+            "202605": "8235",
+            "202606": "7226",
+            "202607": "7775",
+            "202608": "5598"
+          },
+          "unipacext_consultas_emergencia_spa": {
+            "202601": "5649",
+            "202602": "5062",
+            "202603": "5485",
+            "202604": "4879",
+            "202605": "5556",
+            "202606": "5061",
+            "202607": "5075",
+            "202608": "0"
+          },
+          "unipacext_tt_consultas_ambulatorio": {
+            "202601": "2428",
+            "202602": "2229",
+            "202603": "1990",
+            "202604": "2087",
+            "202605": "2679",
+            "202606": "2165",
+            "202607": "2700",
+            "202608": "5598"
+          },
+          "unipacext_consultas_primeira_vez": {
+            "202601": "732",
+            "202602": "702",
+            "202603": "838",
+            "202604": "977",
+            "202605": "951",
+            "202606": "659",
+            "202607": "907",
+            "202608": "5598"
+          },
+          "unipacext_consultas_subsequentes": {
+            "202601": "1696",
+            "202602": "1527",
+            "202603": "1152",
+            "202604": "1110",
+            "202605": "1728",
+            "202606": "1506",
+            "202607": "1793",
+            "202608": "0"
+          },
+          "uniinternacao_tt_internacoes": {
+            "202601": "747",
+            "202602": "680",
+            "202603": "869",
+            "202604": "745",
+            "202605": "816",
+            "202606": "749",
+            "202607": "748",
+            "202608": "727"
+          },
+          "uniinternacao_intern_idoso": {
+            "202601": "0",
+            "202602": "0",
+            "202603": "0",
+            "202604": "0",
+            "202605": "0",
+            "202606": "0",
+            "202607": "0",
+            "202608": "0"
+          },
+          "uniinternacao_tt_saidas": {
+            "202601": "742",
+            "202602": "720",
+            "202603": "889",
+            "202604": "777",
+            "202605": "826",
+            "202606": "805",
+            "202607": "725",
+            "202608": "721"
+          },
+          "uniinternacao_indice_giro": {
+            "202601": "2.3",
+            "202602": "2.2",
+            "202603": "2.8",
+            "202604": "2.4",
+            "202605": "2.6",
+            "202606": "2.5",
+            "202607": "2.3",
+            "202608": "2.3"
+          },
+          "uniinternacao_tx_ocup_hosp": {
+            "202601": "75.0",
+            "202602": "75.0",
+            "202603": "78.0",
+            "202604": "79.0",
+            "202605": "77.0",
+            "202606": "79.0",
+            "202607": "72.0",
+            "202608": "76.0"
+          },
+          "uniinternacao_tx_ocup_clinica_medica": {
+            "202601": "98.0",
+            "202602": "96.0",
+            "202603": "96.0",
+            "202604": "94.0",
+            "202605": "95.0",
+            "202606": "97.0",
+            "202607": "94.0",
+            "202608": "93.0"
+          },
+          "uniinternacao_tx_ocup_ortopedia": {
+            "202601": "91.0",
+            "202602": "89.0",
+            "202603": "80.0",
+            "202604": "86.0",
+            "202605": "93.0",
+            "202606": "85.0",
+            "202607": "70.0",
+            "202608": "79.0"
+          },
+          "uniinternacao_tx_ocup_clinica_cirurgica": {
+            "202601": "69.0",
+            "202602": "75.0",
+            "202603": "87.0",
+            "202604": "75.0",
+            "202605": "67.0",
+            "202606": "70.0",
+            "202607": "74.0",
+            "202608": "65.0"
+          },
+          "uniinternacao_tx_ocup_cir_vascular": {
+            "202601": "60.0",
+            "202602": "73.0",
+            "202603": "72.0",
+            "202604": "71.0",
+            "202605": "54.0",
+            "202606": "62.0",
+            "202607": "73.0",
+            "202608": "74.0"
+          },
+          "uniinternacao_tx_ocup_neuro": {
+            "202601": "66.0",
+            "202602": "60.0",
+            "202603": "78.0",
+            "202604": "72.0",
+            "202605": "72.0",
+            "202606": "86.0",
+            "202607": "77.0",
+            "202608": "82.0"
+          }
+        },
+        "metadados": {
+          "cnes": {
+            "202601": "2270269",
+            "202602": "2270269",
+            "202603": "2270269",
+            "202604": "2270269",
+            "202605": "2270269",
+            "202606": "2270269",
+            "202607": "2270269",
+            "202608": "2270269"
+          },
+          "enviado": {
+            "202601": "1",
+            "202602": "1",
+            "202603": "1",
+            "202604": "1",
+            "202605": "1",
+            "202606": "1",
+            "202607": "1",
+            "202608": "1"
+          },
+          "datahora_enviado": {
+            "202601": "2026-05-14 13:05:42",
+            "202602": "2026-06-03 12:15:27",
+            "202603": "2026-06-03 12:15:57",
+            "202604": "2026-07-08 10:32:50",
+            "202605": "2026-07-08 10:24:03",
+            "202606": "2026-08-04 10:59:38",
+            "202607": "2026-08-11 13:18:37",
+            "202608": "2026-09-03 12:14:55"
+          }
+        }
+      }
+    }
+  ],
+  "respostasObservadas": [
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/publico/session/getSession.php",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 2
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/usuario/perfil_unidade",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/publico/session/getSession.php",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 2
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/usuario/perfil_unidade",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/publico/session/getSession.php",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 2
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/usuario/perfil_unidade",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/relatorio/get_unidades_grupo?tabela=1",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/publico/session/getSession.php",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 2
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/usuario/perfil_unidade",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 5
+    },
+    {
+      "metodo": "GET",
+      "url": "https://smsrio.org/subhue/macroindicadores/server/relatorio/get_dados_por_vigencia?tabela=1&cnes=2270269&vigencia=2026",
+      "tipoRecurso": "xhr",
+      "status": 200,
+      "tipoConteudo": "text/html; charset=UTF-8",
+      "disposicao": "",
+      "pontuacao": 35
+    }
+  ]
+}

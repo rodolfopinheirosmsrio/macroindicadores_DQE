@@ -1,0 +1,13 @@
+CORREÇÃO DO COMPARATIVO POR INDICADOR — 10/08/2026
+
+Esta atualização corrige a falha que deixava a mensagem “Selecione o indicador acima” na tela mesmo depois de escolher um indicador.
+
+Como instalar
+1. Feche a aba do painel.
+2. Extraia este arquivo ZIP.
+3. Copie as pastas src e painel extraídas para:
+   C:\Users\15407850761\Documents\Codex\smsrio-macro-robo-primeira-instalacao\smsrio-macro-robo
+4. Confirme a substituição dos arquivos existentes.
+5. Abra novamente painel\painel-dashboard.html.
+
+Não é necessário executar o robô novamente. Esta atualização utiliza os dados já coletados.

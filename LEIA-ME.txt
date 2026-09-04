@@ -1,0 +1,18 @@
+ATUALIZAÇÃO VISUAL v2 — Macroindicadores
+
+O pacote altera os dois pontos que controlam o painel:
+- src\dashboard-ui.mjs  (fonte que regenera o painel quando o robô executa)
+- painel\painel-dashboard.html  (painel atual)
+
+COMO APLICAR
+1. Feche a aba do painel.
+2. Extraia este ZIP DIRETAMENTE dentro da pasta smsrio-macro-robo.
+3. Quando o Windows perguntar, escolha SUBSTITUIR os arquivos existentes.
+4. Abra painel\painel-dashboard.html e pressione Ctrl+F5.
+5. Depois execute o robô. A aparência deve continuar igual, porque dashboard-ui.mjs também foi atualizado.
+
+SINAL VISUAL DA V2
+- cartão branco da logo bem mais estreito e centralizado;
+- “Macroindicadores” centralizado;
+- subtítulo centralizado;
+- gradientes somente navy/azul/ciano, sem violeta.

@@ -1,0 +1,23 @@
+{
+  "name": "smsrio-macro-robo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Automacao local dos Macroindicadores SMS Rio para Google Sheets.",
+  "scripts": {
+    "conferir": "node src/cli.mjs --modo=conferir",
+    "atualizar": "node src/cli.mjs --modo=atualizar",
+    "google-login": "node src/google-login.mjs",
+    "snapshot-planilhas": "node src/atualizar-snapshot-planilhas.mjs",
+    "check": "node --check src/cli.mjs && node --check src/smsrio.mjs && node --check src/google.mjs && node --check src/planilhas.mjs",
+    "test": "node test/util.test.mjs"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "googleapis": "^160.0.0",
+    "playwright": "^1.55.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
