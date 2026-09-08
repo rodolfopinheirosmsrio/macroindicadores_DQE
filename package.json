@@ -12,7 +12,8 @@
     "google-login": "node src/google-login.mjs",
     "snapshot-planilhas": "node src/atualizar-snapshot-planilhas.mjs",
     "check": "node --check src/cli.mjs && node --check src/smsrio.mjs && node --check src/google.mjs && node --check src/planilhas.mjs",
-    "test": "node test/util.test.mjs"
+    "test": "node test/util.test.mjs",
+    "google-status": "node src/verificar-google.mjs"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^3.0.1",

@@ -45,6 +45,23 @@ export function clientesGoogle(auth) {
   };
 }
 
+export async function verificarContaGoogle(auth, emailEsperado) {
+  const drive = google.drive({ version: "v3", auth });
+  const { data } = await drive.about.get({ fields: "user(displayName,emailAddress)" });
+  const emailAtual = String(data.user?.emailAddress ?? "").trim().toLowerCase();
+  const esperado = String(emailEsperado ?? "").trim().toLowerCase();
+
+  if (!emailAtual) {
+    throw new Error("Nao foi possivel identificar a conta Google autorizada.");
+  }
+  if (esperado && emailAtual !== esperado) {
+    throw new Error(
+      `Conta Google incorreta: ${emailAtual}. Autorize a conta da equipe ${emailEsperado} executando autorizar-google.bat.`
+    );
+  }
+  return { email: emailAtual, nome: data.user?.displayName ?? "" };
+}
+
 function escaparDrive(texto) {
   return String(texto).replaceAll("'", "\\'");
 }

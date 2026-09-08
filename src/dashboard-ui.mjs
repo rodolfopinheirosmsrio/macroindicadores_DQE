@@ -11,7 +11,7 @@ export function renderDashboardHtml({ dados, execucoes, logo, sidebarMotion, mon
   });
   const sidebarMotionSrc = sidebarMotion
     ? `data:image/webp;base64,${sidebarMotion}`
-    : "assets/sidebar-ai-bg.gif";
+    : "assets/sidebar-ai-bg.webp";
 
   return `<!doctype html>
 <html lang="pt-BR">

@@ -14,7 +14,7 @@ Este manual trata da rotina de uso. Para instalar ou autorizar o Google, consult
 - Google Sheets oficial de hospitais e pediatria.
 - Google Sheets oficial de maternidades.
 - Google Drive oficial para os arquivos exportados.
-- Pasta local `C:\Users\15407850761\Documents\Backup do macro indicadores`.
+- Pasta local `%USERPROFILE%\Documents\Backup do macro indicadores`.
 
 ## 3. Rotina recomendada do mês
 
@@ -113,7 +113,7 @@ Siglas: todos
 
 ### Arquivos originais do SMS Rio
 
-- Computador: `C:\Users\15407850761\Documents\Backup do macro indicadores`
+- Computador: `%USERPROFILE%\Documents\Backup do macro indicadores`
 - Google Drive: pasta do ano e, dentro dela, `Mês Ano - Robo`.
 
 ### Relatório da execução

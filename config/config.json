@@ -6,7 +6,6 @@
     "2026": "1ybH9VR4oq356N1Hg9ebNXdS7JEi735Q8"
   },
   "historicoMeses": 31,
-  "downloadsDir": "C:\\Users\\15407850761\\Documents\\Backup do macro indicadores",
   "browserProfileDir": "./perfil-navegador",
   "googleCredentials": "./segredos/credentials.json",
   "googleToken": "./segredos/token.json",
@@ -14,5 +13,6 @@
     "hospitalar": "1Wb84Wd3yoxHMHuWaPUR_ecONa6NmV-Kge597Kr8vFYQ",
     "maternidade": "1HTSos3enpDTIDG2e3SrAFHIj-0mCf-II7PkSCU9wSAI"
   },
-  "historicoInicio": "2019-01"
+  "historicoInicio": "2019-01",
+  "googleExpectedAccount": "subhueindicadores@gmail.com"
 }

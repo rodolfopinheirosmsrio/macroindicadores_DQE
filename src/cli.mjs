@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { autenticarGoogle, clientesGoogle, enviarBackup, obterPastaCompetencia } from "./google.mjs";
+import { autenticarGoogle, clientesGoogle, enviarBackup, obterPastaCompetencia, verificarContaGoogle } from "./google.mjs";
 import {
   auditarCompetencia, auditarCompetenciaComSnapshot, atualizarCompetencia, lerEstruturaAba,
   mapearRelatorio, validarAbasConfiguradas
@@ -138,6 +138,8 @@ const auth = await autenticarGoogle({
   credentialsPath: path.resolve(raiz, config.googleCredentials),
   tokenPath: path.resolve(raiz, config.googleToken)
 });
+const contaGoogle = await verificarContaGoogle(auth, config.googleExpectedAccount);
+console.log(`Google autorizado: ${contaGoogle.email}`);
 const { drive, sheets } = clientesGoogle(auth);
 const validacaoAbas = await validarAbasConfiguradas(sheets, config.workbooks, todasUnidades);
 for (const [workbook, validacao] of Object.entries(validacaoAbas)) {

@@ -409,8 +409,9 @@ export async function salvarDashboard(raiz) {
   }
   const logo = await fs.readFile(path.join(raiz, "assets", "logo-dqe.png"))
     .then((valor) => valor.toString("base64")).catch(() => "");
-  const sidebarMotion = await fs.readFile(path.join(raiz, "painel", "assets", "sidebar-ai-bg.webp"))
-    .then((valor) => valor.toString("base64")).catch(() => "");
+  // A animação permanece como arquivo externo em painel/assets.
+  // Isso evita incorporar varios MB em cada HTML gerado/publicado.
+  const sidebarMotion = "";
 
   const htmlLegado = `<!doctype html><html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

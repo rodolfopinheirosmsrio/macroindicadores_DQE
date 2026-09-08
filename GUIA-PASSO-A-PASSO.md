@@ -11,7 +11,7 @@ Este guia explica a instalação e a primeira execução. A automação agora es
 
 ### Backups
 
-- Computador: `C:\Users\15407850761\Documents\Backup do macro indicadores`
+- Computador: `%USERPROFILE%\Documents\Backup do macro indicadores`
 - [Pasta principal dos anos no Google Drive](https://drive.google.com/drive/folders/1vlZzgJYNg_PC1yvVuCU1Df97xJjksTS0)
 - [Pasta existente do ano de 2026](https://drive.google.com/drive/folders/1ybH9VR4oq356N1Hg9ebNXdS7JEi735Q8)
 
@@ -146,7 +146,7 @@ Se a pré-verificação rápida ficar indisponível ou retornar um formato inesp
 Todos os arquivos ficam em:
 
 ```text
-C:\Users\15407850761\Documents\Backup do macro indicadores
+%USERPROFILE%\Documents\Backup do macro indicadores
 ```
 
 O nome contém unidade, categoria, competência e data de extração para evitar confusão entre unidades de mesma sigla em categorias diferentes.
@@ -218,7 +218,7 @@ Não renomeie a aba sem conferir `config\unidades.json`. A sigla correta da Mate
 
 ### A pasta de backup local não existe
 
-O robô cria `C:\Users\15407850761\Documents\Backup do macro indicadores` automaticamente na primeira extração.
+O robô cria `%USERPROFILE%\Documents\Backup do macro indicadores` automaticamente na primeira extração.
 
 ## 13. Checklist final
 

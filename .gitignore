@@ -4,3 +4,6 @@ perfil-navegador/
 logs/
 *.log
 
+
+# Arquivo local gerado a cada execucao; a publicacao copia-o para painel/index.html.
+painel/painel-dashboard.html

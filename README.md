@@ -8,7 +8,7 @@ Automação local com Playwright para consultar o relatório mensal do SMS Rio, 
 - Maternidades: [NOVO MACROINDICADORES MATERNIDADES - COMPLETO (MENSAL)](https://docs.google.com/spreadsheets/d/1HTSos3enpDTIDG2e3SrAFHIj-0mCf-II7PkSCU9wSAI/edit)
 - Pasta principal do Drive: [Backup - Plataforma SMS Rio](https://drive.google.com/drive/folders/1vlZzgJYNg_PC1yvVuCU1Df97xJjksTS0)
 - Pasta de 2026: [2026](https://drive.google.com/drive/folders/1ybH9VR4oq356N1Hg9ebNXdS7JEi735Q8)
-- Backup local: `C:\Users\15407850761\Documents\Backup do macro indicadores`
+- Backup local: `%USERPROFILE%\Documents\Backup do macro indicadores`
 
 O ano de 2026 utiliza a pasta já existente. Para 2027 e anos seguintes, o robô cria automaticamente a pasta do ano dentro da pasta principal e, nela, a pasta `Mês Ano - Robo`.
 
@@ -77,3 +77,11 @@ Leia [GUIA-PASSO-A-PASSO.md](GUIA-PASSO-A-PASSO.md) para instalação e [MANUAL-
 - A sigla da Maternidade Mariska Ribeiro está configurada como `HMMR`.
 
 Psiquiatria permanece fora do escopo até que suas planilhas e abas sejam configuradas.
+
+## Uso pela equipe (multiusuario)
+
+O projeto esta preparado para uso por diferentes perfis do Windows. Cada profissional configura seu proprio CPF/senha do SMS Rio; a senha fica protegida pelo Windows e nao e compartilhada. O Google deve ser autorizado com a conta da equipe `subhueindicadores@gmail.com`.
+
+Use `Macroindicadores.bat` ou o atalho **Macroindicadores SUBHUE** para acessar o menu central. Consulte `GUIA-EQUIPE-MULTIUSUARIO.md` para a instalacao das outras pessoas, publicacao protegida do painel e atualizacao pelo GitHub.
+
+O backup local padrao e calculado por perfil do Windows em `%USERPROFILE%\\Documents\\Backup do macro indicadores`; nao ha mais dependencia de um usuario especifico do Windows na configuracao ativa.

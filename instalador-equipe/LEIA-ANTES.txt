@@ -1,0 +1,9 @@
+INSTALADOR DA EQUIPE - MACROINDICADORES SUBHUE
+
+1. O administrador do repositorio precisa adicionar a pessoa como colaboradora do GitHub antes da instalacao.
+2. O computador precisa ter Git for Windows e Node.js 20+.
+3. Para autorizar o Google durante a instalacao, coloque uma copia segura de credentials.json ao lado do instalador.
+   Nao coloque token.json, senha SMS Rio ou perfil do navegador neste pacote.
+4. Execute INSTALAR-MACROINDICADORES-EQUIPE.bat.
+5. Quando o GitHub pedir autenticacao, a pessoa deve usar sua propria conta GitHub autorizada.
+6. Quando o Google pedir autenticacao, escolha subhueindicadores@gmail.com.

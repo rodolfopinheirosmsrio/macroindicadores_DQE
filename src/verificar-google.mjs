@@ -7,9 +7,7 @@ const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const config = await lerJson(path.join(raiz, "config", "config.json"));
 const auth = await autenticarGoogle({
   credentialsPath: path.resolve(raiz, config.googleCredentials),
-  tokenPath: path.resolve(raiz, config.googleToken),
-  forcarLogin: true
+  tokenPath: path.resolve(raiz, config.googleToken)
 });
 const conta = await verificarContaGoogle(auth, config.googleExpectedAccount);
-console.log(`Autorização do Google concluída: ${conta.email}`);
-console.log("Token salvo somente neste computador/usuario do Windows.");
+console.log(`Google autorizado: ${conta.email}`);

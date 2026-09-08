@@ -4,6 +4,38 @@ cd /d "%~dp0"
 echo ===============================================
 echo   Robo Macroindicadores SMS Rio
 echo ===============================================
+if not exist "%~dp0segredos\smsrio-cpf.txt" (
+  echo.
+  echo Login SMS Rio ainda nao configurado para este usuario do Windows.
+  echo Execute configurar-login.bat antes de continuar.
+  echo.
+  pause
+  exit /b 2
+)
+if not exist "%~dp0segredos\smsrio-senha.dat" (
+  echo.
+  echo Senha SMS Rio ainda nao configurada para este usuario do Windows.
+  echo Execute configurar-login.bat antes de continuar.
+  echo.
+  pause
+  exit /b 2
+)
+if not exist "%~dp0segredos\credentials.json" (
+  echo.
+  echo Credencial OAuth Google nao encontrada em segredos\credentials.json.
+  echo Solicite o arquivo seguro da equipe antes de continuar.
+  echo.
+  pause
+  exit /b 2
+)
+if not exist "%~dp0segredos\token.json" (
+  echo.
+  echo Google ainda nao autorizado neste computador/usuario.
+  echo Execute autorizar-google.bat e escolha subhueindicadores@gmail.com.
+  echo.
+  pause
+  exit /b 2
+)
 set "SMSRIO_CPF="
 set "SMSRIO_SENHA="
 if exist "%~dp0segredos\smsrio-cpf.txt" set /p SMSRIO_CPF=<"%~dp0segredos\smsrio-cpf.txt"
