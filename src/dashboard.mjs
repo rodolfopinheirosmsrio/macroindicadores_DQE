@@ -265,6 +265,8 @@ export async function salvarDashboard(raiz) {
       execucoes.push({
         inicio: log.inicio,
         fim: log.fim ?? log.inicio,
+        usuarioWindows: log.usuarioWindows ?? "legado",
+        contaGoogle: log.contaGoogle ?? "",
         competencia: log.competencia,
         ano: Number(String(log.competencia).slice(0, 4)),
         mes: Number(String(log.competencia).slice(5, 7)),

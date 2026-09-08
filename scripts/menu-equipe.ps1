@@ -40,8 +40,20 @@ while ($true) {
         }
         "3" {
             $painel = Join-Path $raiz "painel\painel-dashboard.html"
-            if (-not (Test-Path $painel)) { $painel = Join-Path $raiz "painel\index.html" }
-            if (Test-Path $painel) { Start-Process $painel } else { Write-Host "Painel ainda nao foi gerado." -ForegroundColor Yellow; Pausa }
+            if (Get-Command node -ErrorAction SilentlyContinue) {
+                Write-Host "Sincronizando o painel compartilhado da equipe..." -ForegroundColor Cyan
+                & node (Join-Path $raiz "src\sincronizar-painel-equipe.mjs") "--somente-leitura=true"
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Host "Nao foi possivel sincronizar agora. Sera aberta a ultima copia local, se existir." -ForegroundColor Yellow
+                }
+            }
+            if (Test-Path $painel) {
+                Start-Process $painel
+            } else {
+                Write-Host "Painel local ainda nao existe e a sincronizacao nao foi concluida." -ForegroundColor Yellow
+                Write-Host "Use a opcao 8 para autorizar o Google da equipe e tente novamente."
+                Pausa
+            }
         }
         "4" {
             & powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$raiz\scripts\abrir-ultimo-relatorio.ps1"

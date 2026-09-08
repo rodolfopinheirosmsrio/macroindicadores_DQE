@@ -19,6 +19,7 @@ $arquivos = @(
     "GUIA-PASSO-A-PASSO.md",
     "MANUAL-DE-UTILIZACAO-DO-ROBO.md",
     "GUIA-EQUIPE-MULTIUSUARIO.md",
+    "ALTERACOES-ESTADO-COMPARTILHADO.txt",
     "Macroindicadores.bat",
     "atualizar-robo.bat",
     "publicar-painel.bat",
@@ -32,6 +33,8 @@ $arquivos = @(
     "src/dashboard.mjs",
     "src/google-login.mjs",
     "src/google.mjs",
+    "src/estado-equipe.mjs",
+    "src/sincronizar-painel-equipe.mjs",
     "src/verificar-google.mjs",
     "scripts/abrir-ultimo-relatorio.ps1",
     "scripts/atualizar-robo.ps1",
@@ -67,7 +70,7 @@ if ($confirma -and $confirma.ToUpperInvariant() -ne "S") {
     exit 0
 }
 
-& git commit -m "Macroindicadores: suporte multiusuario da equipe"
+& git commit -m "Macroindicadores: estado compartilhado do painel"
 if ($LASTEXITCODE -ne 0) { throw "Falha ao criar o commit." }
 & git push origin main
 if ($LASTEXITCODE -ne 0) { throw "Falha ao enviar a versao ao GitHub." }

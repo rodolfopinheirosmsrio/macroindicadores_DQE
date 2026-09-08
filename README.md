@@ -85,3 +85,7 @@ O projeto esta preparado para uso por diferentes perfis do Windows. Cada profiss
 Use `Macroindicadores.bat` ou o atalho **Macroindicadores SUBHUE** para acessar o menu central. Consulte `GUIA-EQUIPE-MULTIUSUARIO.md` para a instalacao das outras pessoas, publicacao protegida do painel e atualizacao pelo GitHub.
 
 O backup local padrao e calculado por perfil do Windows em `%USERPROFILE%\\Documents\\Backup do macro indicadores`; nao ha mais dependencia de um usuario especifico do Windows na configuracao ativa.
+
+### Estado compartilhado do painel
+
+O histórico usado para gerar o dashboard é sincronizado entre os computadores da equipe pelo Google Drive da conta `subhueindicadores@gmail.com`. O robô cria automaticamente a pasta `Estado compartilhado do painel`, com logs de execução e snapshots versionados por unidade. Antes de publicar, o painel é sincronizado e regenerado; se a sincronização falhar, a publicação é bloqueada para evitar uma versão parcial.

@@ -17,11 +17,20 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
 if (-not (Test-Path (Join-Path $raiz ".git"))) {
     throw "Esta copia nao e um clone Git. Instale a equipe pelo instalador ou use a pasta clonada do GitHub."
 }
+if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
+    throw "Node.js nao encontrado. Execute instalar.bat ou o instalador da equipe."
+}
+
+Write-Host "Sincronizando o estado compartilhado da equipe antes da publicacao..." -ForegroundColor Cyan
+& node (Join-Path $raiz "src\sincronizar-painel-equipe.mjs")
+if ($LASTEXITCODE -ne 0) {
+    throw "Falha ao sincronizar o estado compartilhado. O painel NAO sera publicado para evitar uma fotografia parcial."
+}
 
 $gerado = Join-Path $raiz "painel\painel-dashboard.html"
 $publico = Join-Path $raiz "painel\index.html"
 if (-not (Test-Path $gerado)) {
-    throw "O painel atualizado ainda nao foi gerado neste computador. Execute o robo antes de publicar."
+    throw "O painel consolidado da equipe nao foi gerado. Verifique a sincronizacao com o Google Drive."
 }
 
 Write-Host "Verificando se existe uma versao mais nova no GitHub..."

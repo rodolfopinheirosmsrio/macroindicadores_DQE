@@ -7,3 +7,6 @@ logs/
 
 # Arquivo local gerado a cada execucao; a publicacao copia-o para painel/index.html.
 painel/painel-dashboard.html
+
+# Cache local da sincronizacao do estado compartilhado da equipe.
+dados/estado-equipe-cache.json

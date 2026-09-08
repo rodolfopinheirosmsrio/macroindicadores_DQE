@@ -57,6 +57,37 @@ Na primeira autenticação do GitHub, o Git Credential Manager poderá abrir o n
 5. Escolha **Autorizar a conta Google da equipe** e entre em `subhueindicadores@gmail.com`.
 6. Execute **Verificar ambiente e acessos**.
 
+
+## Estado compartilhado do painel
+
+O painel não depende mais somente dos logs existentes em um computador. O robô usa a conta Google da equipe para manter um estado comum no Google Drive.
+
+A pasta é criada automaticamente dentro da pasta principal do projeto no Drive:
+
+`Estado compartilhado do painel`
+
+com duas áreas:
+
+- `Logs de execucao`: cada execução é armazenada separadamente, com usuário Windows, data/hora, competência e modo;
+- `Snapshots por unidade`: as fotografias do Google Sheets são versionadas por unidade.
+
+Os arquivos compartilhados são **append-only/versionados** para reduzir conflito entre computadores. Se duas pessoas executarem o robô em horários próximos, cada execução mantém seu próprio log e sua própria versão da fotografia da unidade. Na sincronização, o painel usa a versão mais recente de cada unidade.
+
+Na primeira execução depois desta atualização, o computador que já possui o histórico pode demorar um pouco mais, pois migra os logs antigos e divide o snapshot consolidado existente em fotografias por unidade. Nos usos seguintes, o cache local evita baixar novamente arquivos que não mudaram.
+
+### Fluxo de cada execução
+
+1. sincroniza o histórico da equipe no Google Drive;
+2. consulta o SMS Rio;
+3. lê o Google Sheets;
+4. nos modos 2/3, confirma o backup no Drive antes de gravar;
+5. salva o log da execução;
+6. envia o log e as fotografias das unidades consultadas para o estado compartilhado;
+7. sincroniza novamente;
+8. gera o painel consolidado.
+
+A opção **Abrir o painel local** também tenta sincronizar o estado compartilhado antes de abrir. A opção **Publicar o painel** sincroniza e regenera o painel antes do commit; se a sincronização falhar, a publicação é bloqueada para evitar uma fotografia parcial.
+
 ## Google da equipe
 
 O projeto exige a conta:
@@ -76,12 +107,13 @@ O caminho não fica mais preso ao computador do Rodolfo. O padrão é calculado 
 A opção **Publicar o painel atualizado no GitHub**:
 
 1. verifica se o computador está atualizado com `origin/main`;
-2. exige que o painel tenha sido gerado por uma execução;
-3. copia somente `painel/painel-dashboard.html` para `painel/index.html`;
-4. prepara somente os arquivos públicos do painel para commit;
-5. pede confirmação;
-6. faz commit e push;
-7. deixa o workflow do GitHub Pages publicar o site.
+2. sincroniza logs e snapshots compartilhados no Google Drive e regenera o painel consolidado;
+3. se a sincronização falhar, bloqueia a publicação para evitar painel parcial;
+4. copia somente `painel/painel-dashboard.html` para `painel/index.html`;
+5. prepara somente os arquivos públicos do painel para commit;
+6. pede confirmação;
+7. faz commit e push;
+8. deixa o workflow do GitHub Pages publicar o site.
 
 Se outro colega tiver publicado uma versão mais nova, a publicação é bloqueada e a pessoa precisa atualizar o robô e executar novamente a conferência. Isso reduz risco de uma publicação antiga sobrescrever uma nova.
 

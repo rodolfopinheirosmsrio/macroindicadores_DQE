@@ -14,6 +14,7 @@ import { salvarRelatorioExecucao } from "./relatorio-execucao.mjs";
 import { classificarIndicadoresZerados, resumoAuditoria } from "./auditoria.mjs";
 import { carregarFotografiasAnteriores, chaveFoto, compararFotografias } from "./monitoramento.mjs";
 import { salvarDashboard } from "./dashboard.mjs";
+import { finalizarEstadoEquipe, sincronizarEstadoEquipe } from "./estado-equipe.mjs";
 import { atualizarSnapshotUnidade } from "./snapshot-planilhas.mjs";
 import {
   competencia, competenciaAnterior, downloadsPadrao, garantirDiretorio,
@@ -47,11 +48,38 @@ function imprimirAuditoria(resumo, { listarZeros = true, listarDiferencas = true
   console.log(`  Indicadores divergentes: ${resumo.diferencas}`);
 }
 
+function usuarioWindowsAtual() {
+  return String(process.env.USERNAME ?? process.env.USER ?? "usuario").trim() || "usuario";
+}
+
+function nomeSeguroArquivo(texto) {
+  return String(texto ?? "usuario")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9._-]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .toLowerCase() || "usuario";
+}
+
+function resumoEstadoEquipe(estado) {
+  if (!estado) return null;
+  if (estado.habilitado === false) return { habilitado: false };
+  return {
+    habilitado: true,
+    logsEnviados: estado.logs?.enviados ?? estado.sincronizacao?.logs?.enviados ?? 0,
+    logsBaixados: estado.logs?.baixados ?? estado.sincronizacao?.logs?.baixados ?? 0,
+    snapshotsEnviados: estado.snapshots?.enviados ?? estado.snapshotsPublicados?.enviados ?? 0,
+    snapshotsBaixados: estado.snapshots?.baixados ?? estado.sincronizacao?.snapshots?.baixados ?? 0,
+    snapshotsUnidades: estado.snapshots?.unidadesRemotas ?? estado.sincronizacao?.snapshots?.unidadesRemotas ?? 0
+  };
+}
+
 async function salvarLog(log) {
   const dir = path.join(raiz, "logs");
   await garantirDiretorio(dir);
   const carimbo = new Date().toISOString().replace(/[:.]/g, "-");
-  const arquivo = path.join(dir, `execucao-${carimbo}.json`);
+  const usuario = nomeSeguroArquivo(log.usuarioWindows ?? usuarioWindowsAtual()).slice(0, 40);
+  const arquivo = path.join(dir, `execucao-${carimbo}-${usuario}.json`);
   await fs.writeFile(arquivo, JSON.stringify(log, null, 2), "utf8");
   return arquivo;
 }
@@ -111,7 +139,7 @@ function resolverJanelaHistorico() {
 const janelaHistorico = resolverJanelaHistorico();
 const historicoSolicitadoMeses = janelaHistorico.anteriores;
 const historicoMeses = Math.max(6, historicoSolicitadoMeses);
-const fotografiasAnteriores = await carregarFotografiasAnteriores(raiz);
+let fotografiasAnteriores = new Map();
 const todasUnidades = await lerJson(path.join(raiz, "config", "unidades.json"));
 const palavrasTodas = new Set(["todos", "todas", "all"]);
 const mapaCategorias = new Map([
@@ -141,6 +169,30 @@ const auth = await autenticarGoogle({
 const contaGoogle = await verificarContaGoogle(auth, config.googleExpectedAccount);
 console.log(`Google autorizado: ${contaGoogle.email}`);
 const { drive, sheets } = clientesGoogle(auth);
+
+let estadoEquipeInicio = null;
+try {
+  console.log("Sincronizando o estado compartilhado do painel com o Google Drive...");
+  estadoEquipeInicio = await sincronizarEstadoEquipe({
+    drive,
+    raiz,
+    config,
+    permitirUploadLocal: true,
+    permitirSeedSnapshotLocal: true
+  });
+  const resumo = resumoEstadoEquipe(estadoEquipeInicio);
+  if (resumo?.habilitado) {
+    console.log(
+      `Estado da equipe sincronizado: logs baixados ${resumo.logsBaixados}, enviados ${resumo.logsEnviados}; ` +
+      `snapshots baixados ${resumo.snapshotsBaixados}, enviados ${resumo.snapshotsEnviados}.`
+    );
+  }
+} catch (erroEstadoEquipe) {
+  console.warn(`ATENÇÃO: não foi possível sincronizar o estado compartilhado da equipe: ${erroEstadoEquipe.message}`);
+  estadoEquipeInicio = { erro: erroEstadoEquipe.stack ?? String(erroEstadoEquipe) };
+}
+fotografiasAnteriores = await carregarFotografiasAnteriores(raiz);
+
 const validacaoAbas = await validarAbasConfiguradas(sheets, config.workbooks, todasUnidades);
 for (const [workbook, validacao] of Object.entries(validacaoAbas)) {
   if (validacao.ausentes.length) {
@@ -173,6 +225,9 @@ const navegador = await abrirSmsRio({
 
 const log = {
   inicio: new Date().toISOString(), modo,
+  usuarioWindows: usuarioWindowsAtual(),
+  contaGoogle: contaGoogle.email,
+  estadoEquipeInicio: resumoEstadoEquipe(estadoEquipeInicio),
   navegadorSolicitado: modoNavegador,
   navegadorEfetivo: navegador.modoNavegador,
   competencia: comp.chave,
@@ -710,6 +765,28 @@ try {
     log.erroRelatorioHtml = erroRelatorio.stack ?? String(erroRelatorio);
     console.error(`Não foi possível criar o relatório visual: ${erroRelatorio.message}`);
   }
+  await fs.writeFile(log.arquivo, JSON.stringify(log, null, 2), "utf8");
+
+  try {
+    console.log("Sincronizando a execução e as fotografias com o estado compartilhado da equipe...");
+    const estadoEquipeFim = await finalizarEstadoEquipe({
+      drive,
+      raiz,
+      config,
+      arquivoLog: log.arquivo,
+      unidades
+    });
+    log.estadoEquipeFim = resumoEstadoEquipe(estadoEquipeFim);
+    console.log(
+      `Estado compartilhado atualizado: ${estadoEquipeFim.snapshotsPublicados?.enviados ?? 0} ` +
+      "snapshot(s) de unidade e o log desta execução ficaram disponíveis para a equipe."
+    );
+  } catch (erroEstadoEquipe) {
+    log.erroEstadoEquipeFim = erroEstadoEquipe.stack ?? String(erroEstadoEquipe);
+    console.error(`Não foi possível consolidar o estado compartilhado da equipe: ${erroEstadoEquipe.message}`);
+  }
+  await fs.writeFile(log.arquivo, JSON.stringify(log, null, 2), "utf8");
+
   try {
     log.dashboardHtml = await salvarDashboard(raiz);
     const infoPainel = await fs.stat(log.dashboardHtml).catch(() => null);
@@ -722,7 +799,8 @@ try {
     console.error(`Não foi possível atualizar o painel: ${erroDashboard.message}`);
   }
   await navegador.context.close();
-  console.log(`\nLog: ${log.arquivo}`);
+  console.log(`
+Log: ${log.arquivo}`);
   await fs.writeFile(log.arquivo, JSON.stringify(log, null, 2), "utf8");
   if (log.relatorioHtml) console.log(`Relatório visual HTML: ${log.relatorioHtml}`);
   if (log.dashboardHtml) {

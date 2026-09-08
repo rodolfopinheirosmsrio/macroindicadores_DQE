@@ -14,5 +14,11 @@
     "maternidade": "1HTSos3enpDTIDG2e3SrAFHIj-0mCf-II7PkSCU9wSAI"
   },
   "historicoInicio": "2019-01",
-  "googleExpectedAccount": "subhueindicadores@gmail.com"
+  "googleExpectedAccount": "subhueindicadores@gmail.com",
+  "estadoEquipe": {
+    "habilitado": true,
+    "pastaNome": "Estado compartilhado do painel",
+    "logsPastaNome": "Logs de execucao",
+    "snapshotsPastaNome": "Snapshots por unidade"
+  }
 }

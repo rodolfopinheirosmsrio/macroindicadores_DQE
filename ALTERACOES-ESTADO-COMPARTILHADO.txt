@@ -1,0 +1,66 @@
+MACROINDICADORES SUBHUE - ESTADO COMPARTILHADO DO PAINEL
+=========================================================
+
+Objetivo
+--------
+Permitir que Rodolfo e os outros dois integrantes da equipe executem o robo em
+computadores diferentes e, ainda assim, gerem e publiquem o mesmo painel
+consolidado.
+
+O que mudou
+-----------
+1. O Google Drive da conta subhueindicadores@gmail.com passa a ter uma pasta:
+   Estado compartilhado do painel
+
+   Dentro dela o robo cria automaticamente:
+   - Logs de execucao
+   - Snapshots por unidade
+
+2. Cada execucao salva no Drive um log imutavel com:
+   - usuario Windows;
+   - data/hora;
+   - competencia;
+   - modo de execucao;
+   - unidades consultadas e resultado.
+
+3. As fotografias do Google Sheets sao compartilhadas por unidade.
+   Cada nova execucao cria uma nova versao somente das unidades consultadas.
+   Nao ha sobrescrita do arquivo de outro usuario; na sincronizacao o robo usa
+   a versao mais recente de cada unidade.
+
+4. Antes de executar, o robo sincroniza o historico compartilhado.
+   Na primeira execucao apos esta atualizacao, o computador que ja possui o
+   historico pode levar mais tempo porque migra os logs e divide o snapshot
+   existente por unidade no Google Drive.
+
+5. Ao final da execucao:
+   - o log e enviado ao estado compartilhado;
+   - os snapshots das unidades consultadas sao enviados;
+   - o estado e sincronizado novamente;
+   - o painel e gerado com a visao consolidada da equipe.
+
+6. A opcao "Publicar o painel" agora sincroniza e regenera o painel antes do
+   commit. Se a sincronizacao com o estado compartilhado falhar, a publicacao
+   e bloqueada para evitar publicar um painel parcial.
+
+7. A opcao "Abrir o painel local" tenta baixar o estado mais recente da equipe
+   antes de abrir. Ela nunca abre painel/index.html diretamente como fallback.
+
+Fluxo preservado
+----------------
+- Conferir: nao altera Google Sheets.
+- Atualizar pendencias/completo: backup no Drive antes da gravacao.
+- Backup local: continua automatico.
+- Google Sheets: continua sendo a base oficial atualizada nos modos 2/3.
+- Relatorio de execucao: continua automatico e local.
+- GitHub Pages: continua com o mesmo link; a publicacao ocorre pela opcao 2.
+
+Seguranca
+---------
+Continuam fora do GitHub:
+- segredos/
+- token.json
+- senha do SMS Rio
+- perfil-navegador/
+- logs locais
+- cache local da sincronizacao
